@@ -29,7 +29,7 @@ epochs = 10
 my_input_shape = (img_width, img_height, 3)
 batch_size = 1
 
-# Sequential Architecture
+### Sequential Architecture ###
 model = Sequential()
 
 model.add(ResNet50(include_top = False,
@@ -41,7 +41,7 @@ model.add(Dense(1, activation = 'sigmoid'))
 
 model.layers[0].trainable = False
 
-# Functional API Architecture
+### Functional API Architecture ###
 input_layer = Input(shape = my_input_shape)
 
 base_renet50_model = ResNet50(include_top = False, weights = 'imagenet')
@@ -56,10 +56,6 @@ X = GlobalAveragePooling2D() (X)
 predicting_layer = Dense(1, activation = 'sigmoid') (X)
 
 model = Model(inputs = input_layer, outputs = predicting_layer)
-
-
-# Load the model for testing
-model = load_model('model_saved2.h5')
 
 # Compilation
 model.compile(loss = 'binary_crossentropy', optimizer = 'sgd', metrics = ['accuracy'])

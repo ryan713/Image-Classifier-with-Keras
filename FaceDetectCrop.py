@@ -34,16 +34,3 @@ def faceDetectCrop(image):
     else:
         print('No faces found in.' + str(initialcount))
         return None
-
-''' for img in os.listdir(directory):
-    
-    image = cv2.imread(directory + img)
-    
-    if image is None:
-        print('Image ' + str(initialcount) + ' could not be opened.')
-        continue
-    
-    # os.rename(directory + img, directory + 'crop' + str(initialcount) + '.jpg')
-    
-    faceDetectCrop(image)
-    initialcount = initialcount + 1 '''
